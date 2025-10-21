@@ -40,6 +40,15 @@ public class HarekCity {
         };
     }
 
+    public void printKeyboard() {
+        char[][] keyboard = createKeyboard();
+
+        System.out.println(Arrays.toString(keyboard[0]));
+        System.out.println(Arrays.toString(keyboard[1]));
+        System.out.println(Arrays.toString(keyboard[2]));
+        System.out.println(Arrays.toString(keyboard[3]));
+    }
+
     public static void main (String[] args) {
 
         String[] arr = new HarekCity().createEmptyNameArray();
@@ -68,5 +77,7 @@ public class HarekCity {
         for (int i = 0; i < keyboard.length; i++) {
             System.out.println(Arrays.toString(keyboard[i]));
         }
+
+        new HarekCity().printKeyboard();
     }
 }
