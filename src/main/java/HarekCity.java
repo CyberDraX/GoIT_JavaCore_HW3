@@ -31,27 +31,42 @@ public class HarekCity {
         return Arrays.copyOfRange(results, 2, results.length);
     }
 
-    public static void main(String[] args) {
-//        String[] arr = new HarekCity().createEmptyNameArray();
-//        System.out.println(Arrays.toString(arr));
-//
-//        int[] ageArray = new HarekCity().createAgeArray(10, 20, 30, 40);
-//        System.out.println(Arrays.toString(ageArray));
-//
-//        String[] names = new String[]{"mixa", "ukio", "barek", "krou", "fiha"};
-//        String[] toReplace = new String[]{"lopr", "boki"};
-//        new HarekCity().fixNames(names, toReplace);
-//        System.out.println(Arrays.toString(names));
-//
-//        String[] names1 = new String[]{"io", "pu", "re", "max", "kok", "mis", "hit", "kio", "pax", "rew"};
-//        System.out.println(new HarekCity().firstAndLastTogether(names1));
+    public char[][] createKeyboard() {
+        return new char[][]{
+                           {'1','2','3'},
+                           {'4','5','6'},
+                           {'7','8','9'},
+                           {'*','0','#'}
+        };
+    }
 
-//        String[] results = new String[]{"miho", "hut"};
-//        new HarekCity().changeElectResult(results);
-//        System.out.println(Arrays.toString(results));
+    public static void main (String[] args) {
 
-        String[] results = new String[]{"mix", "max", "pex", "fux", "rox"};
-        String[] changedResults = new HarekCity().changeElectResultAgain(results);
+        String[] arr = new HarekCity().createEmptyNameArray();
+        System.out.println(Arrays.toString(arr));
+
+        int[] ageArray = new HarekCity().createAgeArray(10, 20, 30, 40);
+        System.out.println(Arrays.toString(ageArray));
+
+        String[] names = new String[]{"mixa", "ukio", "barek", "krou", "fiha"};
+        String[] toReplace = new String[]{"lopr", "boki"};
+        new HarekCity().fixNames(names, toReplace);
+        System.out.println(Arrays.toString(names));
+
+        String[] names1 = new String[]{"io", "pu", "re", "max", "kok", "mis", "hit", "kio", "pax", "rew"};
+        System.out.println(new HarekCity().firstAndLastTogether(names1));
+
+        String[] results = new String[]{"miho", "hut"};
+        new HarekCity().changeElectResult(results);
+        System.out.println(Arrays.toString(results));
+
+        String[] results1 = new String[]{"mix", "max", "pex", "fux", "rox"};
+        String[] changedResults = new HarekCity().changeElectResultAgain(results1);
         System.out.println(Arrays.toString(changedResults));
+
+        char[][] keyboard = new HarekCity().createKeyboard();
+        for (int i = 0; i < keyboard.length; i++) {
+            System.out.println(Arrays.toString(keyboard[i]));
+        }
     }
 }
