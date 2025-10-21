@@ -49,6 +49,12 @@ public class HarekCity {
         System.out.println(Arrays.toString(keyboard[3]));
     }
 
+    public String[] makeCopy(String[] names) {
+        String[] copiedNames = Arrays.copyOf(names, names.length);
+        System.out.println("Copied!");
+        return copiedNames;
+    }
+
     public static void main (String[] args) {
 
         String[] arr = new HarekCity().createEmptyNameArray();
@@ -79,5 +85,12 @@ public class HarekCity {
         }
 
         new HarekCity().printKeyboard();
+
+        String[] source = new String[] {"Hero", "Mihu"};
+        String[] copy = new HarekCity().makeCopy(source);
+
+        source[0] = "CHANGED!"; //Ми змінюємо вихідний масив, але на копії це не відображається
+
+        System.out.println(Arrays.toString(copy));
     }
 }
