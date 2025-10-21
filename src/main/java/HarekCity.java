@@ -27,6 +27,10 @@ public class HarekCity {
         }
     }
 
+    public String[] changeElectResultAgain(String[] results) {
+        return Arrays.copyOfRange(results, 2, results.length);
+    }
+
     public static void main(String[] args) {
 //        String[] arr = new HarekCity().createEmptyNameArray();
 //        System.out.println(Arrays.toString(arr));
@@ -42,8 +46,12 @@ public class HarekCity {
 //        String[] names1 = new String[]{"io", "pu", "re", "max", "kok", "mis", "hit", "kio", "pax", "rew"};
 //        System.out.println(new HarekCity().firstAndLastTogether(names1));
 
-        String[] results = new String[]{"miho", "hut"};
-        new HarekCity().changeElectResult(results);
-        System.out.println(Arrays.toString(results));
+//        String[] results = new String[]{"miho", "hut"};
+//        new HarekCity().changeElectResult(results);
+//        System.out.println(Arrays.toString(results));
+
+        String[] results = new String[]{"mix", "max", "pex", "fux", "rox"};
+        String[] changedResults = new HarekCity().changeElectResultAgain(results);
+        System.out.println(Arrays.toString(changedResults));
     }
 }
