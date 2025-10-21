@@ -19,19 +19,31 @@ public class HarekCity {
         return names[0] + " AND " + names[names.length-1] + " TOGETHER";
     }
 
+    public void changeElectResult(String[] results) {
+        String[] arrNames = Arrays.copyOf(results, results.length);
+        if (results.length > 1){
+            results[0] = arrNames[arrNames.length - 1];
+            results[results.length-1] = arrNames[0];
+        }
+    }
+
     public static void main(String[] args) {
-        String[] arr = new HarekCity().createEmptyNameArray();
-        System.out.println(Arrays.toString(arr));
-
-        int[] ageArray = new HarekCity().createAgeArray(10, 20, 30, 40);
-        System.out.println(Arrays.toString(ageArray));
-
+//        String[] arr = new HarekCity().createEmptyNameArray();
+//        System.out.println(Arrays.toString(arr));
+//
+//        int[] ageArray = new HarekCity().createAgeArray(10, 20, 30, 40);
+//        System.out.println(Arrays.toString(ageArray));
+//
 //        String[] names = new String[]{"mixa", "ukio", "barek", "krou", "fiha"};
 //        String[] toReplace = new String[]{"lopr", "boki"};
 //        new HarekCity().fixNames(names, toReplace);
 //        System.out.println(Arrays.toString(names));
+//
+//        String[] names1 = new String[]{"io", "pu", "re", "max", "kok", "mis", "hit", "kio", "pax", "rew"};
+//        System.out.println(new HarekCity().firstAndLastTogether(names1));
 
-        String[] names = new String[]{"io", "pu", "re", "max", "kok", "mis", "hit", "kio", "pax", "rew"};
-        System.out.println(new HarekCity().firstAndLastTogether(names));
+        String[] results = new String[]{"miho", "hut"};
+        new HarekCity().changeElectResult(results);
+        System.out.println(Arrays.toString(results));
     }
 }
