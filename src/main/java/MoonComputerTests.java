@@ -30,7 +30,7 @@ public class MoonComputerTests {
         boolean b = scanner.nextBoolean();
         boolean c = scanner.nextBoolean();
 
-        System.out.println((a && b && c)+ " " +(a || b || c));
+        System.out.println((a && b && c) + " " + (a || b || c));
         scanner.close();
     }
 
@@ -39,6 +39,6 @@ public class MoonComputerTests {
 
 //        computerTests.testBasicInputOutput();
 //        computerTests.testMath();
-        computerTests.testLogicalOperators();
+//        computerTests.testLogicalOperators();
     }
 }
