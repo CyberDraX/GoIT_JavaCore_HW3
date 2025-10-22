@@ -75,10 +75,25 @@ public class SaveStarShip {
 
         float enginePower = 0;
         if (compare <= 10) {enginePower = compare * 0.7f;}
-        if (compare < 100) {enginePower = compare * 1.2f;}
+        if (compare >10 && compare < 100) {enginePower = compare * 1.2f;}
         if (compare > 100) {enginePower = compare * 2.1f;}
         System.out.println(enginePower);
         scanner.close();
+    }
+
+    public String getMyPrizes(int ticket) {
+
+        int term1 = ticket % 10;
+
+        String crystallLine = "";
+        String chipLine = "";
+        String coinLine = "";
+
+        if (term1 == 0) {crystallLine = "crystall";}
+        if (term1 == 7) {chipLine = "chip";}
+        if (ticket > 200) {coinLine = "coin";}
+
+        return String.join(" ", crystallLine, chipLine, coinLine).replaceAll(" +", " ").trim();
     }
 
     public static void main(String[] args) {
@@ -105,5 +120,8 @@ public class SaveStarShip {
         //Test stdin data - 1 3 5.
         //Console ouput should be 3.5
         ship.calculateMaxPower();
+
+        //Should be "crystall coin"
+        System.out.println(ship.getMyPrizes(250));
     }
 }
