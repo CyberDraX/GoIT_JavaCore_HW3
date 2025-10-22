@@ -25,6 +25,25 @@ public class SaveStarShip {
         return distanceToEarth < 45677 ? "Earth" : "Pern";
     }
 
+    public int calculateFuelPrice(String fuel, int count) {
+
+        int price;
+        switch (fuel) {
+            case "STAR100":
+                price = count * 70;
+                break;
+            case "STAR500":
+                price = count * 120;
+                break;
+            case "STAR1000":
+                price = count * 200;
+                break;
+            default:
+                price = count * 50;
+        }
+        return price;
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -36,5 +55,8 @@ public class SaveStarShip {
 
         //Should be Earth
         System.out.println(ship.choosePlanet(10));
+
+        //Should be 700
+        System.out.println(ship.calculateFuelPrice("STAR100", 10));
     }
 }
