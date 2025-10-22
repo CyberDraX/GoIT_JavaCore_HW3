@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class SaveStarShip {
 
@@ -63,6 +64,23 @@ public class SaveStarShip {
         }
     }
 
+    public void calculateMaxPower() {
+        Scanner scanner = new Scanner(System.in);
+
+        int engine1 = scanner.nextInt();
+        int engine2 = scanner.nextInt();
+        int engine3 = scanner.nextInt();
+
+        int compare = Math.max((Math.max(engine1, engine2)), engine3);
+
+        float enginePower = 0;
+        if (compare <= 10) {enginePower = compare * 0.7f;}
+        if (compare < 100) {enginePower = compare * 1.2f;}
+        if (compare > 100) {enginePower = compare * 2.1f;}
+        System.out.println(enginePower);
+        scanner.close();
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -83,5 +101,9 @@ public class SaveStarShip {
 
         //Should be 1005
         System.out.println(ship.calculateNeededFuel(21));
+
+        //Test stdin data - 1 3 5.
+        //Console ouput should be 3.5
+        ship.calculateMaxPower();
     }
 }
