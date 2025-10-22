@@ -53,6 +53,16 @@ public class SaveStarShip {
         return roundedSpeed;
     }
 
+    public int calculateNeededFuel(int distance) {
+
+        int distanceCount = 1000;
+        if (distance > 20) {
+            return distanceCount + (distance - 20) * 5;
+        } else {
+            return distanceCount;
+        }
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -70,5 +80,8 @@ public class SaveStarShip {
 
         //Should be 60
         System.out.println(ship.roundSpeed(55));
+
+        //Should be 1005
+        System.out.println(ship.calculateNeededFuel(21));
     }
 }
