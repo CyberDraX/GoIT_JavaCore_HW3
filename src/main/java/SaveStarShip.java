@@ -44,6 +44,15 @@ public class SaveStarShip {
         return price;
     }
 
+    public int roundSpeed(int speed) {
+        
+        int roundedSpeed = 0;
+        if (speed >= 10 && speed <= 89) {
+            roundedSpeed = Math.round(speed / 10f) *10;
+        }
+        return roundedSpeed;
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -58,5 +67,8 @@ public class SaveStarShip {
 
         //Should be 700
         System.out.println(ship.calculateFuelPrice("STAR100", 10));
+
+        //Should be 60
+        System.out.println(ship.roundSpeed(55));
     }
 }
