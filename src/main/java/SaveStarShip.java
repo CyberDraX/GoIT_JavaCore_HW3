@@ -96,6 +96,15 @@ public class SaveStarShip {
         return String.join(" ", crystallLine, chipLine, coinLine).replaceAll(" +", " ").trim();
     }
 
+    public boolean isHangarOk(int side1, int side2, int price) {
+
+        int hangarArea = side1 * side2;
+        int max = Math.max(side1, side2);
+        int min = Math.min(side1, side2);
+
+        return hangarArea >= 1500 &&  max <= min * 2 && price / hangarArea <=1000;
+    }
+
     public static void main(String[] args) {
         SaveStarShip ship = new SaveStarShip();
 
@@ -123,5 +132,8 @@ public class SaveStarShip {
 
         //Should be "crystall coin"
         System.out.println(ship.getMyPrizes(250));
+
+        //Should be true
+        System.out.println(ship.isHangarOk(30, 50, 759000));
     }
 }
